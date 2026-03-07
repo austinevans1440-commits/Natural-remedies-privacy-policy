@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Natural Remedies</title>
+  <meta name="description" content="Privacy Policy for the Natural Remedies iOS application by Elite Zone LLC.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+    :root {
+      --moss: #2D4A2D;
+      --moss-deep: #1B3220;
+      --cream: #F5F0E8;
+      --cream-light: #FAF8F4;
+      --gold: #8B7355;
+      --gold-light: #A89274;
+      --sage: #A8B89C;
+      --sage-muted: #C4CEBC;
+      --bark: #5C4033;
+      --bark-light: #7A5C4A;
+      --ink: #2A2520;
+      --ink-soft: #4A4540;
+      --leaf-shadow: rgba(45,74,45,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.75;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(168,184,156,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(139,115,85,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(45,74,45,0.06) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .leaf-particle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0;
+      font-size: 1rem;
+      animation: leafDrift linear infinite;
+      color: var(--sage);
+    }
+
+    @keyframes leafDrift {
+      0%   { transform: translateY(-20px) rotate(0deg) translateX(0); opacity: 0; }
+      10%  { opacity: 0.4; }
+      90%  { opacity: 0.3; }
+      100% { transform: translateY(100vh) rotate(360deg) translateX(80px); opacity: 0; }
+    }
+
+    .botanical-border {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg,
+        transparent 0%, var(--sage) 15%, var(--moss) 35%,
+        var(--gold) 50%,
+        var(--moss) 65%, var(--sage) 85%, transparent 100%);
+      position: relative;
+    }
+
+    .botanical-border::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin-top: 3px;
+      background: linear-gradient(90deg,
+        transparent 0%, var(--sage-muted) 20%, var(--sage-muted) 80%, transparent 100%);
+    }
+
+    header {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 3.5rem 1.5rem 2.5rem;
+      background: linear-gradient(180deg, var(--cream-light) 0%, var(--cream) 100%);
+    }
+
+    .header-leaf {
+      display: inline-block;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .header-leaf svg {
+      width: 48px;
+      height: 48px;
+      color: var(--moss);
+      animation: gentleSway 4s ease-in-out infinite;
+    }
+
+    @keyframes gentleSway {
+      0%, 100% { transform: rotate(-3deg); }
+      50%      { transform: rotate(3deg); }
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--moss-deep);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.35rem;
+    }
+
+    header .subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+    }
+
+    .header-meta {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .header-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .header-meta svg {
+      width: 14px;
+      height: 14px;
+      color: var(--sage);
+    }
+
+    main {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 4rem;
+    }
+
+    .policy-section {
+      margin-bottom: 2.5rem;
+      padding: 2rem;
+      background: var(--cream-light);
+      border-radius: 12px;
+      border: 1px solid rgba(168,184,156,0.25);
+      position: relative;
+      box-shadow: 0 2px 12px var(--leaf-shadow);
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .policy-section:nth-child(1)  { animation-delay: 0.1s; }
+    .policy-section:nth-child(2)  { animation-delay: 0.15s; }
+    .policy-section:nth-child(3)  { animation-delay: 0.2s; }
+    .policy-section:nth-child(4)  { animation-delay: 0.25s; }
+    .policy-section:nth-child(5)  { animation-delay: 0.3s; }
+    .policy-section:nth-child(6)  { animation-delay: 0.35s; }
+    .policy-section:nth-child(7)  { animation-delay: 0.4s; }
+    .policy-section:nth-child(8)  { animation-delay: 0.45s; }
+    .policy-section:nth-child(9)  { animation-delay: 0.5s; }
+    .policy-section:nth-child(10) { animation-delay: 0.55s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .policy-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--moss), var(--sage), transparent);
+      border-radius: 3px 0 0 3px;
+    }
+
+    .section-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--moss), var(--moss-deep));
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+      box-shadow: 0 2px 8px rgba(45,74,45,0.2);
+    }
+
+    .section-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--moss-deep);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      margin-bottom: 0.75rem;
+      line-height: 1.8;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(45,74,45,0.06), rgba(168,184,156,0.12));
+      border: 1px solid rgba(168,184,156,0.3);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-top: 0.75rem;
+      font-size: 0.88rem;
+      color: var(--moss-deep);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    .highlight-box svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      color: var(--moss);
+    }
+
+    a {
+      color: var(--moss);
+      text-decoration: underline;
+      text-decoration-color: var(--sage);
+      text-underline-offset: 2px;
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+
+    a:hover {
+      color: var(--moss-deep);
+      text-decoration-color: var(--moss);
+    }
+
+    .trust-seal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 3rem auto 2rem;
+      padding: 2rem;
+    }
+
+    .seal-badge {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--moss), var(--moss-deep));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 0 0 3px var(--cream),
+        0 0 0 5px var(--sage-muted),
+        0 4px 16px rgba(45,74,45,0.2);
+      margin-bottom: 1rem;
+    }
+
+    .seal-badge svg {
+      width: 32px;
+      height: 32px;
+      color: var(--cream);
+    }
+
+    .trust-seal p {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--gold);
+      max-width: 360px;
+    }
+
+    footer {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem 1.5rem 3rem;
+      border-top: 1px solid rgba(168,184,156,0.25);
+      background: linear-gradient(0deg, rgba(168,184,156,0.08), transparent);
+    }
+
+    footer .app-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--moss-deep);
+      margin-bottom: 0.25rem;
+    }
+
+    footer .developer {
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      margin-bottom: 0.5rem;
+    }
+
+    footer .contact {
+      font-size: 0.8rem;
+      color: var(--gold);
+    }
+
+    footer .footer-leaves {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      opacity: 0.3;
+    }
+
+    footer .footer-leaves svg {
+      width: 14px;
+      height: 14px;
+      color: var(--sage);
+    }
+
+    @media (max-width: 640px) {
+      main { padding: 1rem 1rem 3rem; }
+      .policy-section { padding: 1.5rem 1.25rem; }
+      .header-meta { gap: 1rem; }
+      header { padding: 2.5rem 1.25rem 2rem; }
+    }
+
+    @media print {
+      .leaf-particle, body::before { display: none !important; }
+      .policy-section {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .leaf-particle { display: none !important; }
+      .header-leaf svg { animation: none; }
+      .policy-section {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="botanical-border"></div>
+
+  <header>
+    <div class="header-leaf">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2C6.5 2 2 6.5 2 12c5-1 8-4 10-10z"/>
+        <path d="M12 2c5.5 0 10 4.5 10 10-5-1-8-4-10-10z"/>
+        <path d="M12 2v20"/>
+        <path d="M8 14c1.5-1 3-1.5 4-1.5"/>
+        <path d="M16 14c-1.5-1-3-1.5-4-1.5"/>
+      </svg>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Natural Remedies for iOS</p>
+    <div class="header-meta">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Effective March 6, 2026
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Your privacy matters
+      </span>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="policy-section">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      </div>
+      <h2>Overview</h2>
+      <p>Natural Remedies is an educational reference app that provides information about herbs, supplements, essential oils, and natural wellness practices. This privacy policy explains how we handle your information&thinsp;&mdash;&thinsp;or more accurately, how we <em>don't</em> collect it.</p>
+      <div class="highlight-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Natural Remedies does not collect, store, or transmit any personal information. Your privacy is fully protected.</span>
+      </div>
+    </div>
+
+    <div class="policy-section">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h2>No Personal Data Collection</h2>
+      <p>We do not collect any personal information whatsoever. The app does not ask for your name, email address, location, or any other identifying information. No account creation or registration is required to use Natural Remedies.</p>
+    </div>
+
+    <div class="policy-section">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 0 0-8 0v2"/></svg>
+      </div>
+      <h2>Local-Only Storage</h2>
+      <p>When you save favorites or bookmarks within the app, this data is stored exclusively on your device using Apple's SwiftData framework. This information never leaves your device and is never transmitted to our servers or any third-party service.</p>
+      <p>If you delete the app, all locally stored data is permanently removed from your device.</p>
+    </div>
+
+    <div class="policy-section">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      </div>
+      <h2>Third-Party Links</h2>
+      <p>Natural Remedies contains links to iHerb.com, a third-party retailer, through an affiliate partnership. When you tap one of these links, you will leave the Natural Remedies app and be directed to the iHerb website or app.</p>
+      <p>Once you leave Natural Remedies, your activity is governed by iHerb's own privacy policy. We encourage you to review their privacy practices before providing any information to third-party sites.</p>
+      <p>We receive no personal data about you from iHerb or any other third party.</p>
+    </div>
+
+    <div class="policy-section">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <h2>No Analytics or Tracking</h2>
+      <p>Natural Remedies does not use any third-party analytics services, tracking pixels, advertising SDKs, or ad networks. We do not track your usage patterns, browsing behavior, or any other activity within the app.</p>
+    </div>
+
+    <div class="policy-section">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+      </div>
+      <h2>No Cookies</h2>
+      <p>As a native iOS application, Natural Remedies does not use cookies or any similar web-based tracking technologies.</p>
+    </div>
+
+    <div class="policy-section">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h2>Children's Privacy</h2>
+      <p>Natural Remedies is not directed at children under the age of 13. We do not knowingly collect any information from children. Since the app collects no personal data from any user, there is no risk of inadvertent collection of children's information.</p>
+    </div>
+
+    <div class="policy-section">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+      </div>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated effective date. Since we do not collect your contact information, we are unable to notify you directly of changes. We encourage you to review this page periodically.</p>
+    </div>
+
+    <div class="policy-section">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <h2>Contact Us</h2>
+      <p>If you have any questions or concerns about this privacy policy or the Natural Remedies app, please contact us at:</p>
+      <p><a href="mailto:austinevansbusiness@gmail.com">austinevansbusiness@gmail.com</a></p>
+    </div>
+
+    <div class="trust-seal">
+      <div class="seal-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2C6.5 2 2 6.5 2 12c5-1 8-4 10-10z"/>
+          <path d="M12 2c5.5 0 10 4.5 10 10-5-1-8-4-10-10z"/>
+          <path d="M12 2v20"/>
+          <path d="M8 14c1.5-1 3-1.5 4-1.5"/>
+          <path d="M16 14c-1.5-1-3-1.5-4-1.5"/>
+        </svg>
+      </div>
+      <p>Crafted with care for your privacy and well-being.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p class="app-name">Natural Remedies</p>
+    <p class="developer">Elite Zone LLC</p>
+    <p class="contact"><a href="mailto:austinevansbusiness@gmail.com">austinevansbusiness@gmail.com</a></p>
+    <div class="footer-leaves">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/></svg>
+    </div>
+  </footer>
+
+  <script>
+    // Create floating leaf particles with safe DOM methods
+    (function() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      var leafChars = ['\uD83C\uDF43', '\uD83C\uDF3F', '\uD83C\uDF40'];
+      var container = document.body;
+
+      for (var i = 0; i < 6; i++) {
+        var leaf = document.createElement('div');
+        leaf.className = 'leaf-particle';
+        leaf.textContent = leafChars[i % leafChars.length];
+        leaf.style.left = (Math.random() * 100) + '%';
+        leaf.style.fontSize = (0.7 + Math.random() * 0.6) + 'rem';
+        leaf.style.animationDuration = (12 + Math.random() * 10) + 's';
+        leaf.style.animationDelay = (Math.random() * 15) + 's';
+        container.appendChild(leaf);
+      }
+    })();
+  </script>
+</body>
+</html>
